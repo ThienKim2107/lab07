@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">🎓 School Management System</h1>
+    <p class="lead">Manage Students, Courses, and Enrollments easily.</p>
+</div>
+
+<hr />
+
+<div class="row text-center">
+
+    <div class="col-md-4">
+        <div class="card shadow p-3 mb-4">
+            <h3>Students</h3>
+            <p>Manage student information</p>
+            <a asp-page="/Students/Index" class="btn btn-primary">Go to Students</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow p-3 mb-4">
+            <h3>Courses</h3>
+            <p>Manage courses and departments</p>
+            <a asp-page="/Courses/Index" class="btn btn-success">Go to Courses</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow p-3 mb-4">
+            <h3>Enrollments</h3>
+            <p>Manage student enrollments</p>
+            <a asp-page="/Enrollments/Index" class="btn btn-warning">Go to Enrollments</a>
+        </div>
+    </div>
+
+</div>

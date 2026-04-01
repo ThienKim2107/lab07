@@ -1,0 +1,35 @@
+﻿@page
+@model Ex01.Pages.Enrollments.IndexModel
+
+<h2>Enrollments</h2>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">+ Add Enrollment</a>
+</p>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Student</th>
+            <th>Course</th>
+            <th>Grade</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in Model.Enrollments)
+        {
+            <tr>
+                <td>@e.EnrollmentID</td>
+                <td>@e.Student?.FullName</td>
+                <td>@e.Course?.Title</td>
+                <td>@(e.Grade.HasValue? e.Grade.Value.ToString("F2") : "N/A")</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@e.EnrollmentID" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-page="Delete" asp-route-id="@e.EnrollmentID" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
